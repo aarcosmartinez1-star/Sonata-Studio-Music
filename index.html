@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sonata Music Studio - Formación Musical Profesional</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sytyles2.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,12 +16,11 @@
 </head>
 
 <body>
-    <!-- Header y Navegación con Logo Personalizado -->
+    <!-- Header y Navegación -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <!-- Logo con tu imagen personalizada -->
                     <a href="#inicio" class="logo-link">
                         <img src="img/logo-2.png" alt="Smart Music Studio Online Logo" class="logo-image">
                     </a>
@@ -29,6 +29,7 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#sobre">Sobre Nosotros</a></li>
+                    <li><a href="#talleres">Talleres</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
                 <div class="menu-toggle">
@@ -38,7 +39,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Sección Hero -->
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
@@ -118,14 +119,13 @@
                         aquí encontrarás el apoyo y la guía necesaria para alcanzar tus metas.</p>
                 </div>
                 <div class="about-image">
-                    <img src="img/1.jpg"
-                        alt="Instrumentos musicales">
+                    <img src="img/1.jpg" alt="Instrumentos musicales">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección Servicios -->
+    <!-- Sección Servicios Principales -->
     <section class="services" id="servicios">
         <div class="container">
             <h2 class="section-title">Nuestros Servicios</h2>
@@ -201,11 +201,310 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="services-cta">
-                <h3>¿No encuentras lo que buscas?</h3>
-                <p>Contáctanos para crear un programa personalizado según tus necesidades musicales.</p>
-                <a href="#contacto" class="btn-primary">Solicitar Información Personalizada</a>
+    <!-- Sección Talleres (Nueva) -->
+    <section class="talleres" id="talleres">
+        <div class="container">
+            <h2 class="section-title">Nuestros Talleres Musicales</h2>
+            <p class="section-subtitle">Cursos especializados para desarrollar tu talento musical</p>
+            
+            <!-- Primera fila de talleres -->
+            <div class="talleres-row">
+                <!-- Taller de Canto -->
+                <div class="taller-card" data-taller="canto">
+                    <div class="taller-header" onclick="toggleTaller('canto')">
+                        <div class="taller-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <div class="taller-title">
+                            <h3>Taller de Canto</h3>
+                            <p class="taller-tagline">Descubre tu voz y hazla brillar</p>
+                        </div>
+                        <div class="taller-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="taller-body" id="canto">
+                        <div class="taller-content">
+                            <p>Las clases de canto no solo ayudan a mejorar la voz, sino también la expresión, la confianza y la conexión emocional con la música.</p>
+                            <h4>Aquí desarrollarás:</h4>
+                            <ul>
+                                <li>Respiración y proyección vocal</li>
+                                <li>Vocalización y afinación</li>
+                                <li>Repertorio adaptado a tu estilo y habilidades</li>
+                                <li>Interpretación con expresión y presencia escénica</li>
+                            </ul>
+                            <p>No necesitas experiencia previa, solo ganas de cantar. Libera tu voz, fortalece tu confianza y conecta con la música como nunca antes.</p>
+                            <p><strong>Tu voz es única y quiero ayudarte a mostrarla a los demás.</strong></p>
+                            <div class="taller-info">
+                                <div class="horario">
+                                    <h5><i class="fas fa-clock"></i> Horarios Disponibles:</h5>
+                                    <p>Matutino y vespertino</p>
+                                    <p><strong>Adultos Clase Grupal:</strong> Jueves 5:00 PM</p>
+                                </div>
+                                <div class="edades">
+                                    <h5><i class="fas fa-users"></i> Para:</h5>
+                                    <p>Niños, adolescentes y adultos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taller de Piano -->
+                <div class="taller-card" data-taller="piano">
+                    <div class="taller-header" onclick="toggleTaller('piano')">
+                        <div class="taller-icon">
+                            <i class="fas fa-piano"></i>
+                        </div>
+                        <div class="taller-title">
+                            <h3>Taller de Piano</h3>
+                            <p class="taller-tagline">Descubre el maravilloso mundo del piano</p>
+                        </div>
+                        <div class="taller-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="taller-body" id="piano">
+                        <div class="taller-content">
+                            <p>En nuestras clases aprenderás mucho más que música.</p>
+                            <h4>Contenido del taller:</h4>
+                            <ul>
+                                <li>Técnica pianística desde cero</li>
+                                <li>Lectura de partituras en clave de sol y fa</li>
+                                <li>Desarrollo del oído musical y coordinación</li>
+                                <li>Repertorio variado</li>
+                                <li>Improvisación, creatividad y expresión emocional</li>
+                            </ul>
+                            <p>Clases para niños, adolescentes y adultos. Ya sea que quieras tocar por gusto o alcanzar un nivel más avanzado, tenemos un plan para ti.</p>
+                            <div class="taller-info">
+                                <div class="horario">
+                                    <h5><i class="fas fa-clock"></i> Horarios Disponibles:</h5>
+                                    <p>Matutino y vespertino</p>
+                                </div>
+                                <div class="edades">
+                                    <h5><i class="fas fa-users"></i> Para:</h5>
+                                    <p>Niños, adolescentes y adultos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segunda fila de talleres -->
+            <div class="talleres-row">
+                <!-- Taller de Guitarra -->
+                <div class="taller-card" data-taller="guitarra">
+                    <div class="taller-header" onclick="toggleTaller('guitarra')">
+                        <div class="taller-icon">
+                            <i class="fas fa-guitar"></i>
+                        </div>
+                        <div class="taller-title">
+                            <h3>Taller de Guitarra</h3>
+                            <p class="taller-tagline">Aprende a tocar guitarra y acompaña tus canciones favoritas</p>
+                        </div>
+                        <div class="taller-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="taller-body" id="guitarra">
+                        <div class="taller-content">
+                            <p>En nuestras clases de guitarra aprenderás a tocar con ritmo, estilo y confianza.</p>
+                            <h4>Conocerás:</h4>
+                            <ul>
+                                <li>Acordes básicos y avanzados</li>
+                                <li>Rasgueos para todos los estilos (pop, balada, cumbia, rock, etc.)</li>
+                                <li>Lectura de acordes y tablaturas</li>
+                                <li>Acompañamiento de canciones religiosas, sociales o populares</li>
+                                <li>Clases personalizadas para niños, jóvenes y adultos</li>
+                                <li>Ideal para cantar y tocar al mismo tiempo</li>
+                            </ul>
+                            <p>No requieres experiencia previa. Te enseñamos desde cero con paciencia y pasión por la música.</p>
+                            <div class="taller-info">
+                                <div class="horario">
+                                    <h5><i class="fas fa-clock"></i> Horarios Disponibles:</h5>
+                                    <p>Matutino y vespertino</p>
+                                </div>
+                                <div class="edades">
+                                    <h5><i class="fas fa-users"></i> Para:</h5>
+                                    <p>Niños, jóvenes y adultos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taller de Teclado -->
+                <div class="taller-card" data-taller="teclado">
+                    <div class="taller-header" onclick="toggleTaller('teclado')">
+                        <div class="taller-icon">
+                            <i class="fas fa-keyboard"></i>
+                        </div>
+                        <div class="taller-title">
+                            <h3>Taller de Teclado</h3>
+                            <p class="taller-tagline">Aprende a tocar el teclado y lleva la música contigo a todas partes</p>
+                        </div>
+                        <div class="taller-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="taller-body" id="teclado">
+                        <div class="taller-content">
+                            <p>En nuestras clases descubrirás lo fácil y divertido que es tocar tus canciones favoritas.</p>
+                            <p>Las clases de teclado tienen mucho en común con las clases de piano, pero suelen ser más versátiles en cuanto a estilos modernos, acompañamientos y uso de tecnología.</p>
+                            <h4>Aquí aprenderás:</h4>
+                            <ul>
+                                <li>Técnica básica del teclado</li>
+                                <li>Lectura y lenguaje musical</li>
+                                <li>Acompañamiento moderno</li>
+                                <li>Repertorio popular y actual</li>
+                                <li>Improvisación y creatividad</li>
+                                <li>Desarrollo integral</li>
+                            </ul>
+                            <p>Las clases de teclado son ideales para niños, adolescentes y adultos, y se adaptan al ritmo y estilo musical de cada alumno.</p>
+                            <div class="taller-info">
+                                <div class="horario">
+                                    <h5><i class="fas fa-clock"></i> Horarios Disponibles:</h5>
+                                    <p>Matutino y vespertino</p>
+                                </div>
+                                <div class="edades">
+                                    <h5><i class="fas fa-users"></i> Para:</h5>
+                                    <p>Niños, adolescentes y adultos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón para ver más talleres -->
+            <div class="mas-talleres">
+                <button class="btn-secondary" onclick="mostrarMasTalleres()">
+                    <i class="fas fa-plus"></i> Ver más talleres disponibles
+                </button>
+            </div>
+
+            <!-- Talleres adicionales (ocultos inicialmente) -->
+            <div class="talleres-adicionales" id="talleres-adicionales">
+                <!-- Tercera fila de talleres -->
+                <div class="talleres-row">
+                    <!-- Taller de Violín -->
+                    <div class="taller-card" data-taller="violin">
+                        <div class="taller-header" onclick="toggleTaller('violin')">
+                            <div class="taller-icon">
+                                <i class="fas fa-violin"></i>
+                            </div>
+                            <div class="taller-title">
+                                <h3>Taller de Violín</h3>
+                                <p class="taller-tagline">Descubre el arte de tocar el violín</p>
+                            </div>
+                            <div class="taller-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="taller-body" id="violin">
+                            <div class="taller-content">
+                                <p>En nuestras clases aprenderás paso a paso a dominar este hermoso instrumento.</p>
+                                <h4>Contenido del taller:</h4>
+                                <ul>
+                                    <li>Técnica desde cero: postura, arco y digitación</li>
+                                    <li>Lectura de partituras y lenguaje musical</li>
+                                    <li>Desarrollo del oído y afinación precisa</li>
+                                    <li>Repertorio clásico, moderno y religioso</li>
+                                    <li>Expresión musical y estilo propio</li>
+                                    <li>Paciencia, perseverancia, concentración y memoria</li>
+                                </ul>
+                                <p>No importa la edad ni la experiencia, te guiamos con paciencia y pasión. Haz que la música cobre vida en tus manos.</p>
+                                <div class="taller-info">
+                                    <div class="horario">
+                                        <h5><i class="fas fa-clock"></i> Información:</h5>
+                                        <p><strong>Llama:</strong> 244 119 1045</p>
+                                        <p><strong>Profesora:</strong> Maribel Aguilar Palacios</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Taller de Coro Infantil -->
+                    <div class="taller-card" data-taller="coro">
+                        <div class="taller-header" onclick="toggleTaller('coro')">
+                            <div class="taller-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <div class="taller-title">
+                                <h3>Taller de Coro Infantil</h3>
+                                <p class="taller-tagline">Permite que tu peque descubra la alegría de cantar en un coro</p>
+                            </div>
+                            <div class="taller-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="taller-body" id="coro">
+                            <div class="taller-content">
+                                <p>En nuestro taller de coro infantil, los niños aprenden música, técnica vocal y mucho más.</p>
+                                <h4>Contenido del taller:</h4>
+                                <ul>
+                                    <li>Respiración, afinación y vocalización</li>
+                                    <li>Canciones divertidas y culturales apropiadas a su edad</li>
+                                    <li>Trabajo en equipo y habilidades sociales</li>
+                                    <li>Expresión corporal y escénica</li>
+                                    <li>Lectura musical y desarrollo auditivo</li>
+                                    <li>Participación en presentaciones y eventos</li>
+                                </ul>
+                                <p>Una experiencia musical llena de juegos, alegría y aprendizaje. Cantar en coro fortalece el corazón, la mente y la voz.</p>
+                                <div class="taller-info destacado">
+                                    <h5><i class="fas fa-gift"></i> Taller Gratuito</h5>
+                                    <p><strong>Horario:</strong> Viernes 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cuarta fila de talleres (solo uno) -->
+                <div class="talleres-row">
+                    <!-- Taller de Batería -->
+                    <div class="taller-card" data-taller="bateria">
+                        <div class="taller-header" onclick="toggleTaller('bateria')">
+                            <div class="taller-icon">
+                                <i class="fas fa-drum"></i>
+                            </div>
+                            <div class="taller-title">
+                                <h3>Taller de Batería</h3>
+                                <p class="taller-tagline">Siente el ritmo y domina la batería</p>
+                            </div>
+                            <div class="taller-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="taller-body" id="bateria">
+                            <div class="taller-content">
+                                <p>En nuestras clases aprenderás a tocar la batería desde cero o mejorar tu técnica.</p>
+                                <h4>Contenido del taller:</h4>
+                                <ul>
+                                    <li>Postura y agarre correcto de las baquetas</li>
+                                    <li>Ritmos básicos y avanzados (rock, pop, salsa, funk, cumbia, etc)</li>
+                                    <li>Coordinación mano-pie y lectura musical</li>
+                                    <li>Rudimentos y técnicas profesionales</li>
+                                    <li>Improvisación y creatividad rítmica</li>
+                                    <li>Clases para niños, jóvenes y adultos</li>
+                                </ul>
+                                <p>Exprésate con energía y pasión a través de la batería. Haz que el ritmo te lleve.</p>
+                                <div class="taller-info">
+                                    <div class="horario">
+                                        <h5><i class="fas fa-clock"></i> Información:</h5>
+                                        <p><strong>Llama:</strong> 221 273 3797</p>
+                                        <p><strong>Profesor:</strong> Ramón de la Fuente</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -317,37 +616,13 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <!-- <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <i class="fas fa-music"></i>
-                    <span>SONATA MUSIC STUDIO</span>
-                </div>
-                <p class="footer-tagline">Estilo y elegancia musical en cada evento</p>
-                <p class="footer-motto">Transformando vidas a través de la música desde 2010</p>
-                
-                <div class="footer-links">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#servicios">Servicios</a>
-                    <a href="#sobre">Sobre Nosotros</a>
-                    <a href="#contacto">Contacto</a>
-                    <a href="#" class="privacy-link">Política de Privacidad</a>
-                </div>
-                
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>-->
-
-        <p class="copyright">&copy; 2026 Sonata Music Studio. Todos los derechos reservados.</p>
-        <!---<p class="design-credit">Diseñado con <i class="fas fa-heart"></i> para amantes de la música</p>----->
-        </div>
+        <div class="container">
+            <p class="copyright">&copy; 2026 Sonata Music Studio. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="talleres.js"></script>
 </body>
 
 </html>

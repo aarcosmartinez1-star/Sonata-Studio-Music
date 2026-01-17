@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Efecto de aparición al hacer scroll
     function checkScroll() {
-        const elements = document.querySelectorAll('.service-card, .about-content, .contact-content');
+        const elements = document.querySelectorAll('.service-card, .about-content, .contact-content, .talleres-row');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Inicializar efectos de scroll
-    document.querySelectorAll('.service-card, .about-content, .contact-content').forEach(element => {
+    document.querySelectorAll('.service-card, .about-content, .contact-content, .talleres-row').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -205,4 +205,193 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Inicializar efectos de scroll
     checkScroll();
+    
+    // Inicializar talleres - cerrar todos al cargar
+    document.querySelectorAll('.taller-body').forEach(body => {
+        body.style.maxHeight = '0';
+        body.style.opacity = '0';
+    });
+    
+    document.querySelectorAll('.taller-toggle i').forEach(icon => {
+        icon.style.transform = 'rotate(0deg)';
+    });
+});
+// JavaScript para los talleres acordeón (de 2 en 2)
+
+// Función para alternar la visualización de un taller
+function toggleTaller(tallerId) {
+    const card = document.querySelector(`[data-taller="${tallerId}"]`);
+    const body = document.getElementById(tallerId);
+    const toggleIcon = card.querySelector('.taller-toggle i');
+    
+    // Si ya está activo, lo cerramos
+    if (card.classList.contains('active')) {
+        card.classList.remove('active');
+        body.style.maxHeight = '0';
+        body.style.opacity = '0';
+        toggleIcon.style.transform = 'rotate(0deg)';
+    } else {
+        // Cerramos cualquier otro abierto en la MISMA FILA
+        const row = card.closest('.talleres-row');
+        if (row) {
+            const activeCardsInRow = row.querySelectorAll('.taller-card.active');
+            activeCardsInRow.forEach(activeCard => {
+                if (activeCard !== card) {
+                    const activeId = activeCard.getAttribute('data-taller');
+                    const activeBody = document.getElementById(activeId);
+                    const activeIcon = activeCard.querySelector('.taller-toggle i');
+                    
+                    activeCard.classList.remove('active');
+                    activeBody.style.maxHeight = '0';
+                    activeBody.style.opacity = '0';
+                    activeIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+        
+        // Abrimos el seleccionado
+        card.classList.add('active');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.opacity = '1';
+        toggleIcon.style.transform = 'rotate(180deg)';
+    }
+}
+
+// Función para mostrar más talleres
+function mostrarMasTalleres() {
+    const extraSection = document.getElementById('talleres-adicionales');
+    const boton = document.querySelector('.mas-talleres .btn-secondary');
+    
+    if (extraSection.classList.contains('mostrar')) {
+        extraSection.classList.remove('mostrar');
+        boton.innerHTML = '<i class="fas fa-plus"></i> Ver más talleres disponibles';
+        
+        // Cerrar todos los talleres dentro de la sección adicional al ocultarla
+        const activeCards = extraSection.querySelectorAll('.taller-card.active');
+        activeCards.forEach(card => {
+            const tallerId = card.getAttribute('data-taller');
+            const body = document.getElementById(tallerId);
+            const toggleIcon = card.querySelector('.taller-toggle i');
+            
+            card.classList.remove('active');
+            body.style.maxHeight = '0';
+            body.style.opacity = '0';
+            toggleIcon.style.transform = 'rotate(0deg)';
+        });
+    } else {
+        extraSection.classList.add('mostrar');
+        boton.innerHTML = '<i class="fas fa-minus"></i> Ver menos talleres';
+    }
+}
+
+// Inicializar los talleres
+document.addEventListener('DOMContentLoaded', function() {
+    // Ocultar la sección de talleres adicionales inicialmente
+    const extraSection = document.getElementById('talleres-adicionales');
+    if (extraSection) {
+        extraSection.classList.remove('mostrar');
+    }
+});
+
+// JavaScript para los talleres acordeón (de 2 en 2)
+
+// Función para alternar la visualización de un taller
+function toggleTaller(tallerId) {
+    const card = document.querySelector(`[data-taller="${tallerId}"]`);
+    const body = document.getElementById(tallerId);
+    const toggleIcon = card.querySelector('.taller-toggle i');
+    
+    // Si ya está activo, lo cerramos
+    if (card.classList.contains('active')) {
+        card.classList.remove('active');
+        body.style.maxHeight = '0';
+        body.style.opacity = '0';
+        toggleIcon.style.transform = 'rotate(0deg)';
+    } else {
+        // Cerramos cualquier otro abierto en la MISMA FILA
+        const row = card.closest('.talleres-row');
+        if (row) {
+            const activeCardsInRow = row.querySelectorAll('.taller-card.active');
+            activeCardsInRow.forEach(activeCard => {
+                if (activeCard !== card) {
+                    const activeId = activeCard.getAttribute('data-taller');
+                    const activeBody = document.getElementById(activeId);
+                    const activeIcon = activeCard.querySelector('.taller-toggle i');
+                    
+                    activeCard.classList.remove('active');
+                    activeBody.style.maxHeight = '0';
+                    activeBody.style.opacity = '0';
+                    activeIcon.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+        
+        // Abrimos el seleccionado
+        card.classList.add('active');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.style.opacity = '1';
+        toggleIcon.style.transform = 'rotate(180deg)';
+    }
+}
+
+// Función para mostrar más talleres
+function mostrarMasTalleres() {
+    const extraSection = document.getElementById('talleres-adicionales');
+    const boton = document.querySelector('.mas-talleres .btn-secondary');
+    
+    if (extraSection.classList.contains('mostrar')) {
+        extraSection.classList.remove('mostrar');
+        boton.innerHTML = '<i class="fas fa-plus"></i> Ver más talleres disponibles';
+        
+        // Cerrar todos los talleres dentro de la sección adicional al ocultarla
+        const activeCards = extraSection.querySelectorAll('.taller-card.active');
+        activeCards.forEach(card => {
+            const tallerId = card.getAttribute('data-taller');
+            const body = document.getElementById(tallerId);
+            const toggleIcon = card.querySelector('.taller-toggle i');
+            
+            card.classList.remove('active');
+            body.style.maxHeight = '0';
+            body.style.opacity = '0';
+            toggleIcon.style.transform = 'rotate(0deg)';
+        });
+    } else {
+        extraSection.classList.add('mostrar');
+        boton.innerHTML = '<i class="fas fa-minus"></i> Ver menos talleres';
+    }
+}
+
+// Inicializar los talleres
+document.addEventListener('DOMContentLoaded', function() {
+    // Ocultar la sección de talleres adicionales inicialmente
+    const extraSection = document.getElementById('talleres-adicionales');
+    if (extraSection) {
+        extraSection.classList.remove('mostrar');
+    }
+    
+    // Inicializar efectos de aparición para los talleres
+    const tallerCards = document.querySelectorAll('.taller-card');
+    tallerCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+    
+    // Función para animar los talleres al hacer scroll
+    function animateTalleres() {
+        const cards = document.querySelectorAll('.taller-card');
+        cards.forEach(card => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+            
+            if (cardPosition < screenPosition) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', animateTalleres);
+    window.addEventListener('load', animateTalleres);
+    animateTalleres(); // Ejecutar una vez al cargar
 });

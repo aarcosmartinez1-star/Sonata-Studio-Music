@@ -1,0 +1,209 @@
+/* Estilos para la Sección de Talleres */
+.talleres {
+    background-color: var(--light-color);
+    padding: 80px 0;
+}
+
+.talleres-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.taller-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+    border-left: 4px solid var(--accent-color);
+}
+
+.taller-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.taller-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+    transition: var(--transition);
+}
+
+.taller-header:hover {
+    background-color: #f9f9f9;
+}
+
+.taller-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-right: 15px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.taller-title {
+    flex-grow: 1;
+}
+
+.taller-title h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.taller-tagline {
+    color: var(--gray-color);
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.taller-toggle {
+    font-size: 1.2rem;
+    color: var(--gray-color);
+    transition: transform 0.3s ease;
+}
+
+.taller-card.active .taller-toggle i {
+    transform: rotate(180deg);
+}
+
+.taller-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    background-color: #fdfdfd;
+}
+
+.taller-content {
+    padding: 20px;
+}
+
+.taller-content h4 {
+    color: var(--primary-color);
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+}
+
+.taller-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.taller-content li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.taller-content li:before {
+    content: "♪";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.taller-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: rgba(26, 54, 93, 0.05);
+    border-radius: 8px;
+}
+
+.taller-info h5 {
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.taller-info h5 i {
+    color: var(--accent-color);
+}
+
+.horario, .edades {
+    flex: 1;
+    min-width: 200px;
+}
+
+.taller-info.destacado {
+    background-color: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.mas-talleres {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.mas-talleres .btn-secondary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+.mas-talleres .btn-secondary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.talleres-adicionales {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+.talleres-adicionales.mostrar {
+    max-height: 2000px;
+    opacity: 1;
+}
+
+/* Responsive Design para Talleres */
+@media (max-width: 768px) {
+    .talleres-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .taller-header {
+        padding: 15px;
+    }
+    
+    .taller-icon {
+        font-size: 2rem;
+        min-width: 40px;
+    }
+    
+    .taller-title h3 {
+        font-size: 1.3rem;
+    }
+    
+    .taller-content {
+        padding: 15px;
+    }
+    
+    .taller-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .horario, .edades {
+        min-width: 100%;
+    }
+}
