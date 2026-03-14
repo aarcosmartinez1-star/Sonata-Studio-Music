@@ -174,7 +174,7 @@
     opacity: 1;
 }
 
-/* Responsive Design para Talleres */
+/* ========== MEDIA QUERIES PARA TALLERES EN MÓVIL ========== */
 @media (max-width: 768px) {
     .talleres-row {
         grid-template-columns: 1fr;
@@ -194,6 +194,10 @@
         font-size: 1.3rem;
     }
     
+    .taller-tagline {
+        font-size: 0.85rem;
+    }
+    
     .taller-content {
         padding: 15px;
     }
@@ -201,9 +205,37 @@
     .taller-info {
         flex-direction: column;
         gap: 15px;
+        padding: 15px;
     }
     
     .horario, .edades {
         min-width: 100%;
+    }
+    
+    .mas-talleres .btn-secondary {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .taller-header {
+        flex-wrap: wrap;
+    }
+    .taller-icon {
+        font-size: 1.8rem;
+        min-width: 35px;
+    }
+    .taller-title h3 {
+        font-size: 1.2rem;
+    }
+    .taller-toggle {
+        font-size: 1rem;
+    }
+    .taller-content h4 {
+        font-size: 1.1rem;
+    }
+    .taller-content li {
+        font-size: 0.95rem;
     }
 }
